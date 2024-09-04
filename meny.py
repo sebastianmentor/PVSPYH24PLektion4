@@ -24,6 +24,35 @@ while run_program:
 
     elif meny_val == '2':
         hur_lång_rast = input('Hur lång rast vill vi ta? Svara i minuter: ')
+        antal_punkter = hur_lång_rast.count('.')
+        finns_punkt = hur_lång_rast.replace('.','')
+
+        if hur_lång_rast == '0':
+            print('Nehepp, då blir det ingen rast då!!')
+
+        elif antal_punkter > 1:
+            print('Ogiltligt tal?')
+
+        elif hur_lång_rast.isdigit() or finns_punkt.isdigit():
+            rast = float(hur_lång_rast)
+            if rast > 60:
+                print('Nej du, det är för lång rast! Fortsätt jobba!')
+            else:
+                print('Okej, ta rast då!')
+
+        elif hur_lång_rast[0] == '-':
+            print('Är du knäpp? Vi kan inte åka baklänges i tiden!!')
+            print('Går inte att ta minus-rast!!!')
+
+        else:
+            print('Ogiltligt val')
+
+        # elif '.' in hur_lång_rast:
+        #     hur_lång_rast = hur_lång_rast.replace('.','')
+        #     if hur_lång_rast.isdigit():
+        #         print(float(hur_lång_rast))
+
+        
         # 89
         # -20
         # 0
@@ -32,7 +61,7 @@ while run_program:
 
 
     elif meny_val == '3':
-        pass
+        print('Absolut! GOOD BYE!')
     elif meny_val == '4':
         print(SEBASTIANS_BABBEL)
     elif meny_val == '5':
